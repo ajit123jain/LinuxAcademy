@@ -11,7 +11,26 @@
 11.Routes 3 (DNS)
 12.Lambdas Service Computing 
 
+https://www.youtube.com/watch?v=LKStwibxbR0&list=PLv2a_5pNAko2Jl4Ks7V428ttvy-Fj4NKU
+https://www.youtube.com/watch?v=BDBvHOaaKHo&list=PLv2a_5pNAko0Mijc6mnv04xeOut443Wnk
 
 
+
+1.Create Account : 
+
+
+1.What is IAM. How to setup IAM and Five Fundamental.
+
+2.What is VPC.
+
+3.Simple Storage Service S3.
+
+4.What is EC2 Elastic Cloud Complete.
+
+5.What si Internet gate Way.
+
+6.What is Route Tables.
+
+7.NACL Network Access Control Services.
 
 
