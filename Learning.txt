@@ -1,0 +1,13 @@
+1.Create Account 
+2.IAM (Identity and Access Management)
+3.VPC Virtual Private CLoud
+4.Simple Storage Service 
+5.Elastic Cloud Complete
+6.RDS/ Dynamo DB
+7.Simple Notification Services 
+8.Cloud Watch Monitoring Services 
+9.Elastic CLoud Balancing
+10.Auto Scaling 
+11.Routes 3 (DNS)
+12.Lambdas Service Computing 
+
