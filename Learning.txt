@@ -18,13 +18,39 @@ http://bit.ly/2guw5gY
 
 
 1.Create Account : 
-
+  For creating account We need to Credit card Or a Debit card and Put the detalils on form You will get a call for confirmation now You can acces your amazon console .
 
 1.What is IAM. How to setup IAM and Five Fundamental.
+  Identity and Access Management : We nned to set up the permission for group and User and Role wise What they can access or what they can not. 
+  Before Start  Using the Your Amazon account you need to follow these 5 tips.
+  1.Delete Your Root Access Keys 
+  2.Activate MFA (Multifactor Authentication)
+  3.Crete Yourself as a Individual User 
+  4.Use Group to assign the permission
+  5.Administraion Policies 
+
 
 2.What is VPC.
+  1.Amazon Global Infrastructure 
+    a.Regions 
+    b.Availability Zone 
+    c.Data Center 	
+
+  Amazon Virtual Private Cloud (Amazon VPC) enables you to launch AWS resources into a virtual network that you've defined. This virtual network closely resembles a traditional network that you'd operate in your own data center, with the benefits of using the scalable infrastructure of AWS.
+  It's like a Google Drive We have seperate Storage to store  Our private data.
+  In this We have Complete Access to our clousd.It Represent the Infrastructure for this access.  
+
+
 
 3.Simple Storage Service S3.
+A online storage that you can access from anywhere on almost any device.Amazon Simple Storage Service is storage for the Internet. It is designed to make web-scale computing easier for developers. Amazon S3 has a simple web services interface that you can use to store and retrieve any amount of data, at any time, from anywhere on the web.
+ Bucket : Root Folder and Nested Folder We have Different Policies and Rules to access file.
+ Pricing :  1. Standard Storag 2.Reduced Redundancy storage 3.Infrequent Acces. 4.Glacier 
+ 
+ About Free Tier Storage : 1. We can get free 5 GB Storage. 
+
+ Setting and  Changing : Object LifeCycle at Bucket Level 
+ 
 
 4.What is EC2 Elastic Cloud Complete.
 
@@ -39,6 +65,7 @@ http://bit.ly/2guw5gY
 8.RDS and Dynamo DB
 
 9.SNS : 
+	Simple Notificaiotn Serivices. 
 
 10.Different Type Of Storage and Pricing and Usability 
 
@@ -46,5 +73,9 @@ http://bit.ly/2guw5gY
 
 12.S3 Bucket Policies and Administration ans roles to the user what they can access.
 
-13.
+13.ELB Elastic Cloud Balancing 
+
+14.Auto Scaling 
+
+15.Lamda (Service Computing )
 
