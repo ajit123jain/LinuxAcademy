@@ -104,17 +104,27 @@ A online storage that you can access from anywhere on almost any device.Amazon S
 
 9.SNS : 
 	Simple Notificaiotn Serivices. 
+  Amazon Simple Notification Service (SNS) is a flexible, fully managed pub/sub messaging and mobile notifications service for coordinating the delivery of messages to subscribing endpoints and clients. With SNS you can fan-out messages to a large number of subscribers, including distributed systems and services, and mobile devices. It is easy to set up, operate, and reliably send notifications to all your endpoints – at any scale. You can get started using SNS in a matter of minutes using the AWS Management Console, AWS Command Line Interface, or using the AWS SDK with just three simple APIs. SNS eliminates the complexity and overhead associated with managing and operating dedicated messaging software and infrastructure.
 
 10.Different Type Of Storage and Pricing and Usability 
+   I get to which is better storage as point of costand usability.Different type of Stoarges. 
+ 
 
 11.What Is AMI : Amazon Machine Image.
    Amazon Machine Image (AMI) is a special type of virtual appliance that is used to instantiate (create) a virtual machine within the Amazon Elastic Compute Cloud (""EC2""). It serves as the basic unit of deployment for services delivered using EC2.We can get different-2 configuration Images.
 
 12.S3 Bucket Policies and Administration ans roles to the user what they can access.
+   Different-2 Poilicies for accessing the folder and  Via creating grops for giving them permission to the users.
+   What they can do on the folder like read only , update , edit and Destroy.
+
 
 13.ELB Elastic Cloud Balancing 
+    Elastic Load Balancing distributes incoming application or network traffic across multiple targets, such as Amazon EC2 instances, containers, and IP addresses, in multiple Availability Zones. Elastic Load Balancing scales your load balancer as traffic to your application changes over time, and can scale to the vast majority of workloads automatically.
 
-14.Auto Scaling 
+14.Auto Scaling :
+  It is goodway to manage load on Server 
+  Amazon EC2 Auto Scaling helps you ensure that you have the correct number of Amazon EC2 instances available to handle the load for your application. You create collections of EC2 instances, called Auto Scaling groups. You can specify the minimum number of instances in each Auto Scaling group, and Auto Scaling ensures that your group never goes below this size. You can specify the maximum number of instances in each Auto Scaling group, and Auto Scaling ensures that your group never goes above this size. If you specify the desired capacity, either when you create the group or at any time thereafter, Auto Scaling ensures that your group has this many instances. If you specify scaling policies, then Auto Scaling can launch or terminate instances as demand on your application increases or decreases. 
 
 15.Lamda (Service Computing )
+   AWS Lambda is an event-driven, serverless computing platform provided by Amazon as a part of the Amazon Web Services. It is a computing service that runs code in response to events and automatically manages the computing resources required by that code.
 
