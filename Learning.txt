@@ -53,16 +53,54 @@ A online storage that you can access from anywhere on almost any device.Amazon S
  
 
 4.What is EC2 Elastic Cloud Complete.
+  Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) cloud. Using Amazon EC2 eliminates your need to invest in hardware up front, so you can develop and deploy applications faster. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage. Amazon EC2 enables you to scale up or down to handle changes in requirements or spikes in popularity, reducing your need to forecast traffic.
+
+  Features of Amazon EC2
+  1.Amazon EC2 provides the following features:
+  2.Virtual computing environments, known as instances
+  3.Preconfigured templates for your instances, known as Amazon Machine Images (AMIs), that package the bits you need for your server (including the operating system and additional software)  
+  4.Various configurations of CPU, memory, storage, and networking capacity for your instances, known as instance types
+  5.Secure login information for your instances using key pairs (AWS stores the public key, and you store the private key in a secure place)
+  6.Storage volumes for temporary data that's deleted when you stop or terminate your instance, known as instance store volumes
+  7.Persistent storage volumes for your data using Amazon Elastic Block Store (Amazon EBS), known as Amazon EBS volumes
+  8.Multiple physical locations for your resources, such as instances and Amazon EBS volumes, known as regions and Availability Zonee.
+  9.A firewall that enables you to specify the protocols, ports, and source IP ranges that can reach your instances using security groups
+  10.Static IPv4 addresses for dynamic cloud computing, known as Elastic IP addresses
+  11.Metadata, known as tags, that you can create and assign to your Amazon EC2 resources
+  12.Virtual networks you can create that are logically isolated from the rest of the AWS cloud, and that you can optionally connect to your own network, known as virtual private clouds (VPCs)
+
 
 5.What is Internet gate Way.
+  An internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between instances in your VPC and the internet. It therefore imposes no availability risks or bandwidth constraints on your network traffic.
+  An internet gateway serves two purposes:
+  A. to provide a target in your VPC route tables for internet-routable traffic, and
+  B. to  perform network address translation (NAT) for instances that have been assigned public IPv4 addresses.
+
+   An internet gateway supports IPv4 and IPv6 traffic. 
+
+   To enable access to or from the internet for instances in a VPC subnet, you must do the following:
+   1.Attach an internet gateway to your VPC.
+   2.Ensure that your subnet's route table points to the internet gateway.
+   3.Ensure that instances in your subnet have a globally unique IP address (public IPv4 address, Elastic IP address, or IPv6 address).
+   4.Ensure that your network access control and security group rules allow the relevant traffic to flow to and from your instance.
 
 6.What is Route Tables.
+  1.A route table contains a set of rules, called routes, that are used to determine where network traffic is directed.
+  2.Each subnet in your VPC must be associated with a route table; the table controls the routing for the subnet. 
+  3.A subnet can only be associated with one route table at a time, 
+  4.but you can associate multiple subnets with the same route table.
 
 7.NACL Network Access Control Services.
+  A network access control list (ACL) is an optional layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more subnets. You might set up network ACLs with rules similar to your security groups in order to add an additional layer of security to your VPC
+  How to edit NACL Rules like Updating subnets and  IGW.
 
 8.Subnets 
+  If a subnet's traffic is routed to an internet gateway, the subnet is known as a public subnet.
+  If a subnet doesn't have a route to the internet gateway, the subnet is known as a private subnet
 
 8.RDS and Dynamo DB
+  Here We have 2 Type of Database  SQL and NoSql for sql We mysql and Postgresql etc. and For NoSql Mongo and Cassandra and Oracle Nosql.
+  Here Also We can get some free database. 
 
 9.SNS : 
 	Simple Notificaiotn Serivices. 
@@ -70,6 +108,7 @@ A online storage that you can access from anywhere on almost any device.Amazon S
 10.Different Type Of Storage and Pricing and Usability 
 
 11.What Is AMI : Amazon Machine Image.
+   Amazon Machine Image (AMI) is a special type of virtual appliance that is used to instantiate (create) a virtual machine within the Amazon Elastic Compute Cloud (""EC2""). It serves as the basic unit of deployment for services delivered using EC2.We can get different-2 configuration Images.
 
 12.S3 Bucket Policies and Administration ans roles to the user what they can access.
 
