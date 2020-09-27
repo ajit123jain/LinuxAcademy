@@ -1,0 +1,178 @@
+➜  offiql-app git:(master) 
+➜  offiql-app git:(master) ssh deploy@18.222.196.7                 
+deploy@18.222.196.7's password: 
+Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 5.4.0-1025-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun Sep 27 13:10:11 UTC 2020
+
+  System load:  0.0               Processes:           103
+  Usage of /:   59.3% of 7.69GB   Users logged in:     0
+  Memory usage: 40%               IP address for eth0: 172.31.39.138
+  Swap usage:   0%
+
+ * Kubernetes 1.19 is out! Get it in one command with:
+
+     sudo snap install microk8s --channel=1.19 --classic
+
+   https://microk8s.io/ has docs and details.
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+5 packages can be updated.
+0 updates are security updates.
+
+
+Last login: Sun Sep 27 10:50:05 2020 from 157.37.121.90
+deploy@ip-172-31-39-138:~$ cd ~
+deploy@ip-172-31-39-138:~$ wget http://apache.mirror1.spango.com/lucene/solr/5.2.1/solr-5.2.1.tgz
+--2020-09-27 13:10:25--  http://apache.mirror1.spango.com/lucene/solr/5.2.1/solr-5.2.1.tgz
+Resolving apache.mirror1.spango.com (apache.mirror1.spango.com)... failed: Name or service not known.
+wget: unable to resolve host address ‘apache.mirror1.spango.com’
+deploy@ip-172-31-39-138:~$ tar xzf solr-5.0.0.tgz solr-5.0.0/bin/install_solr_service.sh --strip-components=2
+tar (child): solr-5.0.0.tgz: Cannot open: No such file or directory
+tar (child): Error is not recoverable: exiting now
+tar: Child returned status 2
+tar: Error is not recoverable: exiting now
+deploy@ip-172-31-39-138:~$ wget https://archive.apache.org/dist/lucene/solr/5.0.0/solr-5.0.0.tgz
+-bash: wget https://archive.apache.org/dist/lucene/solr/5.0.0/solr-5.0.0.tgz: No such file or directory
+deploy@ip-172-31-39-138:~$ ls
+offiql
+deploy@ip-172-31-39-138:~$ wget https://archive.apache.org/dist/lucene/solr/5.0.0/solr-5.2.1.tgz
+-bash: wget https://archive.apache.org/dist/lucene/solr/5.0.0/solr-5.2.1.tgz: No such file or directory
+deploy@ip-172-31-39-138:~$ wget https://archive.apache.org/dist/lucene/solr/5.0.0/solr-5.0.0.tgz
+-bash: wget https://archive.apache.org/dist/lucene/solr/5.0.0/solr-5.0.0.tgz: No such file or directory
+deploy@ip-172-31-39-138:~$ ls
+offiql
+deploy@ip-172-31-39-138:~$ cd
+deploy@ip-172-31-39-138:~$ wget https://archive.apache.org/dist/lucene/solr/5.2.1/solr-5.2.1.tgz
+-bash: wget https://archive.apache.org/dist/lucene/solr/5.2.1/solr-5.2.1.tgz: No such file or directory
+deploy@ip-172-31-39-138:~$ wget http://apache.mirror1.spango.com/lucene/solr/5.2.1/solr-5.2.1.tgz
+--2020-09-27 13:13:32--  http://apache.mirror1.spango.com/lucene/solr/5.2.1/solr-5.2.1.tgz
+Resolving apache.mirror1.spango.com (apache.mirror1.spango.com)... failed: Name or service not known.
+wget: unable to resolve host address ‘apache.mirror1.spango.com’
+deploy@ip-172-31-39-138:~$ wget https://archive.apache.org/dist/lucene/solr/5.2.1/solr-5.2.1.tgz
+--2020-09-27 13:14:28--  https://archive.apache.org/dist/lucene/solr/5.2.1/solr-5.2.1.tgz
+Resolving archive.apache.org (archive.apache.org)... 138.201.131.134, 2a01:4f8:172:2ec5::2
+Connecting to archive.apache.org (archive.apache.org)|138.201.131.134|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 148849766 (142M) [application/x-gzip]
+Saving to: ‘solr-5.2.1.tgz’
+
+solr-5.2.1.tgz                                     100%[================================================================================================================>] 141.95M  14.0MB/s    in 11s     
+
+2020-09-27 13:14:40 (12.8 MB/s) - ‘solr-5.2.1.tgz’ saved [148849766/148849766]
+
+deploy@ip-172-31-39-138:~$ ls
+offiql  solr-5.2.1.tgz
+deploy@ip-172-31-39-138:~$ tar xzf solr-5.2.1.tgz solr-5.2.1/bin/install_solr_service.sh --strip-components=2
+
+deploy@ip-172-31-39-138:~$ 
+deploy@ip-172-31-39-138:~$ ls
+install_solr_service.sh  offiql  solr-5.2.1.tgz
+deploy@ip-172-31-39-138:~$ sudo bash ./install_solr_service.sh solr-5.2.1.tgz
+[sudo] password for deploy: 
+id: ‘solr’: no such user
+Creating new user: solr
+Adding system user `solr' (UID 113) ...
+Adding new group `solr' (GID 118) ...
+Adding new user `solr' (UID 113) with group `solr' ...
+Creating home directory `/home/solr' ...
+Extracting solr-5.2.1.tgz to /opt
+Creating /etc/init.d/solr script ...
+● solr.service - LSB: Controls Apache Solr as a Service
+   Loaded: loaded (/etc/init.d/solr; generated)
+   Active: active (exited) since Sun 2020-09-27 13:15:58 UTC; 5s ago
+     Docs: man:systemd-sysv-generator(8)
+  Process: 15090 ExecStart=/etc/init.d/solr start (code=exited, status=0/SUCCESS)
+
+Sep 27 13:15:52 ip-172-31-39-138 systemd[1]: Starting LSB: Controls Apache Solr as a Service...
+Sep 27 13:15:52 ip-172-31-39-138 su[15092]: Successful su for solr by root
+Sep 27 13:15:52 ip-172-31-39-138 su[15092]: + ??? root:solr
+Sep 27 13:15:52 ip-172-31-39-138 su[15092]: pam_unix(su:session): session opened for user solr by (uid=0)
+Sep 27 13:15:58 ip-172-31-39-138 solr[15090]: [154B blob data]
+Sep 27 13:15:58 ip-172-31-39-138 solr[15090]: Started Solr server on port 8983 (pid=15158). Happy searching!
+Sep 27 13:15:58 ip-172-31-39-138 solr[15090]: [14B blob data]
+Sep 27 13:15:58 ip-172-31-39-138 systemd[1]: Started LSB: Controls Apache Solr as a Service.
+Service solr installed.
+deploy@ip-172-31-39-138:~$ sudo su - solr -c "/opt/solr/bin/solr create -c staging
+> "
+
+Setup new core instance directory:
+/var/solr/data/staging
+
+Creating new core 'staging' using command:
+http://localhost:8983/solr/admin/cores?action=CREATE&name=staging&instanceDir=staging
+
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":2599},
+  "core":"staging"}
+
+deploy@ip-172-31-39-138:~$ cd /var/solr/data/staging/conf
+deploy@ip-172-31-39-138:/var/solr/data/staging/conf$ ks
+ks: command not found
+deploy@ip-172-31-39-138:/var/solr/data/staging/conf$ ls
+currency.xml  elevate.xml  lang  managed-schema  params.json  protwords.txt  solrconfig.xml  stopwords.txt  synonyms.txt
+deploy@ip-172-31-39-138:/var/solr/data/staging/conf$ sudo nano schema.xml
+deploy@ip-172-31-39-138:/var/solr/data/staging/conf$ sudo nano solrconfig.xml 
+
+  GNU nano 2.9.3                                                                                  solrconfig.xml                                                                                            
+
+  <!--
+     <queryParser name="myparser" class="com.mycompany.MyQParserPlugin"/>
+    -->
+
+  <!-- Function Parsers
+
+       http://wiki.apache.org/solr/FunctionQuery
+
+       Multiple ValueSourceParsers can be registered by name, and then
+       used as function names when using the "func" QParser.
+    -->
+  <!-- example of registering a custom function parser  -->
+  <!--
+     <valueSourceParser name="myfunc" 
+                        class="com.mycompany.MyValueSourceParser" />
+    -->
+
+
+  <!-- Document Transformers
+       http://wiki.apache.org/solr/DocTransformers
+    -->
+  <!--
+     Could be something like:
+     <transformer name="db" class="com.mycompany.LoadFromDatabaseTransformer" >
+       <int name="connection">jdbc://....</int>
+     </transformer>
+     
+     To add a constant value to all docs, use:
+     <transformer name="mytrans2" class="org.apache.solr.response.transform.ValueAugmenterFactory" >
+       <int name="value">5</int>
+     </transformer>
+     
+     If you want the user to still be able to change it with _value:something_ use this:
+     <transformer name="mytrans3" class="org.apache.solr.response.transform.ValueAugmenterFactory" >
+       <double name="defaultValue">5</double>
+     </transformer>
+
+      If you are using the QueryElevationComponent, you may wish to mark documents that get boosted.  The
+      EditorialMarkerFactory will do exactly that:
+     <transformer name="qecBooster" class="org.apache.solr.response.transform.EditorialMarkerFactory" />
+    -->
+
+
+  <!-- Legacy config for the admin interface -->
+  <admin>
+    <defaultQuery>*:*</defaultQuery>
+  </admin>
+
+</config>
+
+

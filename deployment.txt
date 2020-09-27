@@ -77,10 +77,12 @@ sudo rm sudo nano /etc/nginx/sites-enabled/default
 sudo nano /etc/nginx/sites-enabled/offiql.conf
 
 
+passenger-config about ruby-command  # output of this command as ruby path will update below block
+
 server {
     listen 80;
-    #server_name 18.222.196.7;
-    server_name demo.offiql.com 18.222.196.7;
+    server_name 18.222.196.7;
+    #server_name demo.offiql.com 18.222.196.7;
 
 
     rails_env staging;
@@ -89,7 +91,7 @@ server {
 
     # Turn on Passenger
     passenger_enabled on;
-    passenger_ruby /usr/local/rvm/gems/ruby-2.6.5/wrappers/ruby;
+    passenger_ruby /usr/local/rvm/gems/ruby-2.6.5/wrappers/ruby;   # this is ruby path will come from 
 }
 
 # install postgres 
@@ -100,4 +102,12 @@ createdb -O deploy offiql-staging
 sudo su - postgres
 psql 
 
-psql -U deploy -W -h 18.222.196.7  -d offiql-staging
+
+Final Passenger Solr Sunspot 
+wget https://archive.apache.org/dist/lucene/solr/5.2.1/solr-5.2.1.tgz
+tar xzf solr-5.2.1.tgz solr-5.2.1/bin/install_solr_service.sh --strip-components=2
+sudo bash ./install_solr_service.sh solr-5.2.1.tgz
+sudo su - solr -c "/opt/solr/bin/solr create -c staging
+go to /var/solr/data/staging/conf
+update solr_config.xml 
+solr.xml 
