@@ -1,0 +1,17 @@
+Instructor: Stephane Maarek
+Instructor: AWS Training Center
+
+
+Uses of AMI 
+
+
+
+
+1.What is subnet.
+2.How can i add Attach ebs to my instance.
+3.
+
+
+
+lsblk 
+df

@@ -1,0 +1,103 @@
+Deployment
+sudo apt-get update 
+sudo apt install openjdk-8-jdk
+ssh -i "offiql.pem" ubuntu@ec2-18-222-196-7.us-east-2.compute.amazonaws.com
+
+
+
+
+# Add user 
+sudo adduser deploy
+sudo nano /etc/ssh/sshd_config
+
+Edit below 2 in this file 
+paswordAuthentication yes 
+Rootlogin yes 
+
+sudo systemctl restart sshd
+
+sudo visudo
+deploy ALL(ALL:ALL) ALL  # under root  user previllage 
+
+deploy@18.222.196.7   #replace with your instance public_ip 
+
+
+
+#setup nodejs 
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+sudo apt-get install -y nodejs
+sudo apt-get install gcc g++ make
+curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update && sudo apt-get install yarn
+sudo add-apt-repository ppa:chris-lea/redis-server
+sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools nodejs yarn
+
+# install rvm
+sudo apt install gnupg2
+gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+cd /tmp
+curl -sSL https://get.rvm.io -o rvm.sh
+less /tmp/rvm.sh
+cat /tmp/rvm.sh | bash -s stable --rails
+rvm list known
+rvm install 2.6.5
+rvm use 2.6.5
+gem install rails -v 6.0.3
+rvm gemset create 6.0.3
+rvm use 2.6.5@6.0.3
+gem install bundler
+
+sudo apt-get update
+sudo apt autoremove --purge  libnginx-mod* nginx python-certbot-nginx python3-certbot-nginx
+sudo apt-get install -y dirmngr gnupg
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
+sudo apt-get install -y apt-transport-https ca-certificates
+sudo sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger bionic main > /etc/apt/sources.list.d/passenger.list'
+sudo apt-get update
+sudo apt-get install -y libnginx-mod-http-passenger python3-certbot-nginx
+
+if [ ! -f /etc/nginx/modules-enabled/50-mod-http-passenger.conf ]; then sudo ln -s /usr/share/nginx/modules-available/mod-http-passenger.load /etc/nginx/modules-enabled/50-mod-http-passenger.conf ; fi
+sudo ls /etc/nginx/conf.d/mod-http-passenger.conf
+sudo nano /etc/nginx/conf.d/mod-http-passenger.conf
+
+Find this 
+passenger_root /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini;
+passenger_ruby /usr/bin/passenger_free_ruby;
+
+
+# validate installation
+sudo /usr/bin/passenger-config validate-install
+sudo /usr/sbin/passenger-memory-stats
+sudo service nginx restart
+
+sudo service nginx restart
+sudo rm sudo nano /etc/nginx/sites-enabled/default
+sudo nano /etc/nginx/sites-enabled/offiql.conf
+
+
+server {
+    listen 80;
+    #server_name 18.222.196.7;
+    server_name demo.offiql.com 18.222.196.7;
+
+
+    rails_env staging;
+    # Tell Nginx and Passenger where your app's 'public' directory is
+    root /home/deploy/offiql/current/public;
+
+    # Turn on Passenger
+    passenger_enabled on;
+    passenger_ruby /usr/local/rvm/gems/ruby-2.6.5/wrappers/ruby;
+}
+
+# install postgres 
+sudo apt-get install postgresql postgresql-contrib libpq-dev
+sudo su - postgres
+createdb -O deploy offiql-staging
+
+sudo su - postgres
+psql 
+
+psql -U deploy -W -h 18.222.196.7  -d offiql-staging
