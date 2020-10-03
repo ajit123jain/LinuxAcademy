@@ -97,7 +97,7 @@ server {
 # install postgres 
 sudo apt-get install postgresql postgresql-contrib libpq-dev
 sudo su - postgres
-createdb -O deploy offiql-staging
+createdb -O deploy "offiql-staging"
 
 sudo su - postgres
 psql 
@@ -111,3 +111,8 @@ sudo su - solr -c "/opt/solr/bin/solr create -c staging
 go to /var/solr/data/staging/conf
 update solr_config.xml 
 solr.xml 
+
+
+
+Drop database 
+DROP DATABASE [IF EXISTS] offiql-staging;
