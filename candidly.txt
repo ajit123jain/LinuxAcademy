@@ -1,0 +1,22 @@
+Backend 
+
+Gems 
+1.Letter Opener 
+2.Active Model Serializer 
+3.Rubocop 
+4.Listen Gem 
+
+
+APIs Errors list 
+1.Need to Remove Code from after signin response, same Reset password token and magic link token also.
+2.Foreign key on_delete option and dependent
+
+
+Questions
+1.Why you have written # frozen_string_literal: true in concern and controller files.
+2.Some of the model files does not have Magical Comment yet # frozen_string_literal: true
+3.Also remove the freeze from string in model as we are using magical comment and user string literal on all strings in model vars 
+4.@client.errors.errors can change 
+5.Also Add Index to magic link token 
+6.MasterUserRole -> MasterClientUserRole 
+7.User Account blocked will that be possible to login with magic link 

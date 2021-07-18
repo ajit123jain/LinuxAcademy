@@ -97,7 +97,7 @@ server {
 # install postgres 
 sudo apt-get install postgresql postgresql-contrib libpq-dev
 sudo su - postgres
-createdb -O deploy "offiql-staging"
+createdb -O deploy "offiql-production"
 
 sudo su - postgres
 psql 
@@ -107,8 +107,18 @@ Final Passenger Solr Sunspot
 wget https://archive.apache.org/dist/lucene/solr/5.2.1/solr-5.2.1.tgz
 tar xzf solr-5.2.1.tgz solr-5.2.1/bin/install_solr_service.sh --strip-components=2
 sudo bash ./install_solr_service.sh solr-5.2.1.tgz
-sudo su - solr -c "/opt/solr/bin/solr create -c staging
-go to /var/solr/data/staging/conf
+sudo su - solr -c "/opt/solr/bin/solr create -c production"
+go to /var/solr/data/production/conf
+update solr_config.xml 
+solr.xml 
+
+
+
+wget https://archive.apache.org/dist/lucene/solr/5.0.0/solr-5.0.0.tgz
+tar xzf solr-5.0.0.tgz solr-5.0.0/bin/install_solr_service.sh --strip-components=2
+sudo bash ./install_solr_service.sh solr-5.0.0.tgz
+sudo su - solr -c "/opt/solr/bin/solr create -c production"
+go to /var/solr/data/production/conf
 update solr_config.xml 
 solr.xml 
 
@@ -116,3 +126,4 @@ solr.xml
 
 Drop database 
 DROP DATABASE [IF EXISTS] offiql-staging;
+drop database "offiql-staging";
