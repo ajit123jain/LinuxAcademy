@@ -128,3 +128,29 @@ A online storage that you can access from anywhere on almost any device.Amazon S
 15.Lamda (Service Computing )
    AWS Lambda is an event-driven, serverless computing platform provided by Amazon as a part of the Amazon Web Services. It is a computing service that runs code in response to events and automatically manages the computing resources required by that code.
 
+
+
+
+https://courses.datacumulus.com/downloads/certified-developer-k92
+
+https://www.tunnelbear.com/
+
+https://links.datacumulus.com/aws-certified-dev-pt-coupon
+
+SQS, S3, EC2
+
+
+AWS Regions us-east-1
+Availability Zones -> 2 to 6
+  Aws Console
+    IAM
+    Route 53
+    Cloudfront -> CDN
+    WAF -> Web application firewall
+
+  View all services or By Category
+
+
+  IAM -> Identity and Acces Management
+  Least previllage permission
+     

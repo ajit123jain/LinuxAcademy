@@ -1,0 +1,155 @@
+A JavaScript library for building user interfaces
+
+A Client side JavaScript library.
+All about building react user interfaces for the web
+Declarable Component based approach.                                                                                                             
+Single Page Application 
+Angular JS and Vue JS 
+
+
+Basics Of react ->
+Components and Building UI
+Working With Events props and State 
+Styling Rwact Components
+Hooks 
+Deployment
+JavaScript Refreshed 
+
+
+
+Ref and Hiiook  
+
+Refresher 
+Let and Const 
+
+
+Export nd Import Recheck
+
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8199180#overview
+
+npx create-react-app my-app
+cd my-app
+npm start
+
+
+import React from 'react';
+
+import './ExpensesFilter.css';
+
+const ExpensesFilter = (props) => {
+  return (
+    <div className='expenses-filter'>
+      <div className='expenses-filter__control'>
+        <label>Filter by year</label>
+        <select onChange={(option) => props.setSelectedYear(option.value)}>
+          <option value='2022'>2022</option>
+          <option value='2021'>2021</option>
+          <option value='2020'>2020</option>
+          <option value='2019'>2019</option>
+        </select>
+      </div>
+    </div>
+  );
+};
+
+export default ExpensesFilter;
+
+In Expenses JS
+[selectedYear, setSelectedYear] = useState('');
+{/* put this in card div */}
+<ExpensesFilter setSelectedYear={setSelectedYear}></ExpensesFilter>
+
+
+setExpenses((prevExpenses) => [expense, ...prevExpenses])
+
+[showAddButton, setShowAddButton] =  useState(true)
+
+{showAddButton && <div><button onClick={() => setShowAddButton(false)}>Add Expense</button>}
+
+// Form Will be visible when addbutton will be false
+{!showAddButton && <ExpenseForm setShowAddButton={setShowAddButton} />}
+
+Now Inside ExpenseForm Component Cancel button
+
+<button onClick={(event)=> props.setShowAddButton(true)}>Cancel</button> 
+<button onClick={(event)=> {
+  // Add Expense form data to expenses list and Hide form
+  setExpenses([{date: date, amount: amount, title: title}, ...expenses])
+  props.setShowAddButton(true)
+  
+  }}>Add Expense</button> 
+
+
+  Styled Components
+  Modules .scss
+
+
+  Add React Dev tools 
+  Fragement, Portals and Refs 
+
+ const Wrapper = (props) => {
+   return props.children
+ }
+
+ export default Wrapper;
+
+ React Fragements 
+ React Portals
+
+
+ UserRef when you only need to read data.
+
+ Handling Effects, Useing Reducers and Context
+
+
+ Managing App wider Context
+ Managing More complext state with Reducers
+ Working with Effects
+
+ UseReducer
+
+ useContext 
+ ForwradRef
+ userImperativeHandler
+ useCallback custom hooks
+ 
+
+
+ React Optimization
+ React Memo is useful.
+ UseCallback 
+ 
+
+Course Updated 
+Next JS
+Gatsby JS
+Preact 
+React Native 
+SSR 
+Testing
+Authentication Module 
+
+
+https://acad.link/nextjs
+
+https://acad.link/react-native
+
+https://acad.link/mern
+
+https://academind.com/tutorials/react-18-update-guide
+
+
+useContext 
+
+React Memo 
+React Lazy Loader
+Suspense fallback loading 
+
+
+
+Deployment
+TestCode 
+Optimizate Code 
+Build App for production 
+Configure production 

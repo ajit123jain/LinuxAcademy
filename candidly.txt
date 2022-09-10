@@ -20,3 +20,9 @@ Questions
 5.Also Add Index to magic link token 
 6.MasterUserRole -> MasterClientUserRole 
 7.User Account blocked will that be possible to login with magic link 
+
+Vikas 
+1.Toaster Message method and replace everywhere 
+2.Remove String and user from json files 
+3.Will Keep common all these basic options like toaster messages and Other one line constants 
+4.
